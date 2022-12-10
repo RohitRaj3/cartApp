@@ -15,13 +15,22 @@ class CartItem extends React.Component{
         // this.state.qty+=1           this will show qty increased in console only not in browser
         // console.log('this', this.state);   to show in browser we use setState (setState do shallow merging only)
         //setState  form 1  (shallow merging means only specified element will merge or increase or decrease)
-        this.setState ({
-            qty: this.state.qty + 1
-        });
+    //     this.setState ({
+    //         qty: this.state.qty + 1
+    //     });
+    // }
+
+    //setState form 2 - if prevState required use this form
+     this.setState((prevState) => {
+        return {
+            qty: prevState.qty +1
+        }
+     });
     }
     render(){
         const{price,title,qty}= this.state;
         return(
+            //add cartItem
             <div className="cart-item">
                 <div className="left-block">
                     <img style= {styles.image}  />
