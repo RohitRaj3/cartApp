@@ -4,13 +4,25 @@ import React from "react";
 class CartItem extends React.Component{
     constructor(){
         super();
-        this.state ={
+        this.state = {
             price: 999,
-            title: 'mobile phone',
+            title: 'Mobile Phone',
             qty: 1,
             img: ''
         }
+        // this.testing();
     }
+    // testing () {
+    //     const promise = new promise((resolve, reject) => {
+    //         setTimeout (() => {
+    //             resolve ('done');
+    //         }, 5000);
+    //     })
+    //     promise.then (() => {
+    //         this.setState ({qty : 100});
+    //         console.log('state', this.state);
+    //     });
+    // }
     increaseQuantity = () => {
         // this.state.qty+=1           this will show qty increased in console only not in browser
         // console.log('this', this.state);   to show in browser we use setState (setState do shallow merging only)
@@ -30,7 +42,7 @@ class CartItem extends React.Component{
     }
     decreaseQuantity = () => {
         // to avoid -1 or negative after 0
-        const {qty} = this.state;
+        const {qty} = this.state;  ///rendering when qty reach 0
         if(qty === 0){
             return;
         }
@@ -79,8 +91,8 @@ const styles={
     image:{
         height: 110,
         width: 110,
-        borderRadius: 4
-        
+        borderRadius: 4,
+        color: '#777'
     }
 }
 
