@@ -66,7 +66,8 @@ class CartItem extends React.Component{
                         alt="increase" 
                         className="actions-icons" 
                         src="https://t4.ftcdn.net/jpg/01/26/10/59/240_F_126105961_6vHCTRX2cPOnQTBvx9OSAwRUapYTEmYA.jpg" 
-                        onClick = {this.increaseQuantity.bind(this)}
+                        // onClick = {this.increaseQuantity.bind(this)}
+                        onClick = { () => this.props.onIncreaseQuantity(this.props.product)}
                         />
                         <img 
                         alt="delete" 
