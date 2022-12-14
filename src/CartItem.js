@@ -58,22 +58,23 @@ class CartItem extends React.Component{
                     <div className="cart-item-actions">
                         {/* Buttons */}
                         <img 
-                        alt="decrease" 
-                        className="actions-icons" 
-                        src="https://t3.ftcdn.net/jpg/03/73/49/86/240_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg" 
-                        onClick = { () => onDecreaseQuantity(product)}
-                        />
-                        <img 
                         alt="increase" 
                         className="actions-icons" 
-                        src="https://t4.ftcdn.net/jpg/01/26/10/59/240_F_126105961_6vHCTRX2cPOnQTBvx9OSAwRUapYTEmYA.jpg" 
+                        src= "https://cdn-icons-png.flaticon.com/512/992/992651.png"
                         // onClick = {this.increaseQuantity.bind(this)}
                         onClick = { () => onIncreaseQuantity(product)}
                         />
                         <img 
+                        alt="decrease" 
+                        className="actions-icons" 
+                        src= "https://cdn-icons-png.flaticon.com/512/992/992683.png"
+                        onClick = { () => onDecreaseQuantity(product)}
+                        />
+                       
+                        <img 
                         alt="delete" 
                         className="actions-icons" 
-                        src="https://t3.ftcdn.net/jpg/00/65/77/26/240_F_65772602_cPboY4Oamnswse6bN2r9ky4hXDQEVNix.jpg" 
+                        src= "https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
                         onClick = { () => onhandleDelete(product.id)}
                         />
                     </div>
