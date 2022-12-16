@@ -1,24 +1,25 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-class Navbar extends React.Component{
+
+    const Navbar = (props) => {
     
-    render(){
+    
        return (
             <div style= {styles.CartIconContainer}>
                 <div style ={styles.nav}>
                     <img style = {styles.CartIcon}src= "https://cdn-icons-png.flaticon.com/512/711/711897.png" alt= "cart-icons" />
-                    <span style={styles.CartCount}>3</span>
+                    <span style={styles.CartCount}>{props.count}</span>
                 </div>
                
             </div>
        );
        }
-}
+
 const styles={
     CartIcon : {
         height: 32,
-        marginRight: 20
+        marginRight: 20,
     },
     nav: {
         height: 70,

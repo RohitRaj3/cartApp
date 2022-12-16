@@ -1,55 +1,21 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-class CartItem extends React.Component{
+// class CartItem extends React.Component{
+    const CartItem =(props) => {         //make it as function
     
-    // testing () {
-    //     const promise = new promise((resolve, reject) => {
-    //         setTimeout (() => {
-    //             resolve ('done');
-    //         }, 5000);
-    //     })
-    //     promise.then (() => {
-    //         this.setState ({qty : 100});
-    //         console.log('state', this.state);
-    //     });
-    // }
-    increaseQuantity = () => {
-        // this.state.qty+=1           this will show qty increased in console only not in browser
-        // console.log('this', this.state);   to show in browser we use setState (setState do shallow merging only)
-        //setState  form 1  (shallow merging means only specified element will merge or increase or decrease)
-    //     this.setState ({
-    //         qty: this.state.qty + 1
-    //     });
-    // }
-
-    //setState form 2 - if prevState required use this form
-     this.setState((prevState) => {
-        return {
-            qty: prevState.qty +1,
-            // price: prevState.price + price
-        }
-     });
-    }
-    decreaseQuantity = () => {
-        // to avoid -1 or negative after 0
-        const {qty} = this.state;  ///rendering when qty reach 0
-        if(qty === 0){
-            return;
-        }
-        this.setState({
-            qty: this.state.qty - 1 
-        });
-    }
-    render(){
-        console.log("this.props", this.props);
-        const{price,title,qty}= this.props.product;
-        const {product, onIncreaseQuantity,onDecreaseQuantity,onhandleDelete} = this.props;
+        const{price,title,qty}= props.product;
+        const {
+            product, 
+            onIncreaseQuantity,
+            onDecreaseQuantity,
+            onhandleDelete
+        } = props;
         return(
             //add cartItem
             <div className="cart-item">
                 <div className="left-block">
-                    <img style= {styles.image}  />
+                    <img style= {styles.image} src={product.img} />
                 </div>
                 <div className="right-block">
                     <div style={{fontSize:25}}> { title }</div>
@@ -82,7 +48,7 @@ class CartItem extends React.Component{
             </div>
         );
     }
-}
+
 const styles={
     image:{
         height: 110,
