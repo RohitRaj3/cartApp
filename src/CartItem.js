@@ -9,7 +9,7 @@ import React from "react";
             product, 
             onIncreaseQuantity,
             onDecreaseQuantity,
-            onhandleDelete
+            onDeleteProduct
         } = props;
         return(
             //add cartItem
@@ -41,7 +41,7 @@ import React from "react";
                         alt="delete" 
                         className="actions-icons" 
                         src= "https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
-                        onClick = { () => onhandleDelete(product.id)}
+                        onClick = { () => onDeleteProduct(product.id)}
                         />
                     </div>
                 </div>

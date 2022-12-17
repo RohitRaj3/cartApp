@@ -12,7 +12,7 @@ import Navbar from './Navbar';
             {
                 price: 99,
                 title: 'Watch',
-                qty: 19,
+                qty: 1,
                 img: 'https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=452&q=80',
                 id: 1
             },
