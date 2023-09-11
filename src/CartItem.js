@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+
 import React from "react";
 
 // class CartItem extends React.Component{
@@ -15,7 +15,7 @@ import React from "react";
             //add cartItem
             <div className="cart-item">
                 <div className="left-block">
-                    <img style= {styles.image} src={product.img} />
+                    <img style= {styles.image} src={product.img} alt=""/>
                 </div>
                 <div className="right-block">
                     <div style={{fontSize:25}}> { title }</div>

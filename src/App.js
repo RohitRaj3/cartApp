@@ -47,7 +47,7 @@ import {} from 'firebase/compat/firestore';
       snapshot.docs.map((doc) => {
         console.log(doc.data())
       });
-      //display productat screen from firebase
+      //display product at screen from firebase
       const products = snapshot.docs.map((doc) => {
         const data =  doc.data()
 
@@ -102,7 +102,8 @@ import {} from 'firebase/compat/firestore';
     const docRef = this.db.collection('products').doc(products[index].id);
     docRef
       .update ({
-           qty : products[index].qty - 1
+           qty : products[index].qty - 1,
+           
       })
       .then (() => {
         console.log('updated successfully');
@@ -139,9 +140,9 @@ getCartCount = () => {
 getCartTotal = () => {
   const {products } = this.state;
   let cartTotal = 0;
-  
+
   products.map((product) => {
-    if(products.qty > 0){
+    if(product.qty >= 0){
     cartTotal = cartTotal + product.qty * product.price;
     }
     return '';
@@ -156,7 +157,7 @@ getCartTotal = () => {
        img : '',
        price: 900,
        qty: 1,
-       title: 'washing machine'
+       title: 'Milky Bar Toffee'
      })//jyothirmai.kattamuri@gmail.com
      .then((docRef) => {
        console.log('Product has been added', docRef);
@@ -178,8 +179,8 @@ render () {
           onDecreaseQuantity={this.handleDecreaseQuantity}
           onDeleteProduct={this.handleDeleteProduct}
         />
-        {loading && <h1>Loading Products ....</h1>}
-        <div style = {{padding: 20, fontSize : 20}} > TOTAL : {this.getCartTotal ()}</div>
+        {/* {loading && <h1>Loading Products ....</h1>} */}
+        <div style = {{padding: 20, fontSize : 20}} > TOTAL : {this.getCartTotal() }</div>
       </div>
     );
   }
